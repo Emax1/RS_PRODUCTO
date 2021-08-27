@@ -367,13 +367,13 @@ def filtrado(datos_df,k,nuevo_dato):
     top7=datos_filtros.sort_values('Distancias').head(7)
     indices_7=top7.index
     #print('\n Top 7 Barrios Recomendados\n',top7)
-    nomenclatura=pd.DataFrame({
-    'Nombre Variables':['% Red de Agua Potable y alcantarillado','% Red de electricidad','% Iluminación pública','% Cobertura Recolección Basura','% Cobertura del transporte público','% Cobertura Internet (conectividad)','Distancia a  unidad educativa más cercana(km)','Distancia a centro de cuidado infantil más cercana','Distancia a unidad de salud / hospitalaia más cercana','Distancia a unidad de abastecimiento  PPN más cercana','Distancia a unidad policial más cercana','Distancia a unidad administrativa más cercana','Distancia a parada transporte público mas cercano','Distancia a parque barrial más cercano','Num actividades de acción vecinal barrio / últimos 6 meses','Num Reuniones barrio / últimos 6 meses','Num incidencias reportadas / últimos 6 meses',
-                        'Num prácticas tradicionales y festivas del barrio','Num espacios para desarrollo cultural del barrio'],
-    'Código':['V1','V2','V3','V4','V5','V6','V7','V8','V9','V10','V11','V12','V13','V14','V15','V16','V17','V18','V19']})
+    #nomenclatura=pd.DataFrame({
+    #'Nombre Variables':['% Red de Agua Potable y alcantarillado','% Red de electricidad','% Iluminación pública','% Cobertura Recolección Basura','% Cobertura del transporte público','% Cobertura Internet (conectividad)','Distancia a  unidad educativa más cercana(km)','Distancia a centro de cuidado infantil más cercana','Distancia a unidad de salud / hospitalaia más cercana','Distancia a unidad de abastecimiento  PPN más cercana','Distancia a unidad policial más cercana','Distancia a unidad administrativa más cercana','Distancia a parada transporte público mas cercano','Distancia a parque barrial más cercano','Num actividades de acción vecinal barrio / últimos 6 meses','Num Reuniones barrio / últimos 6 meses','Num incidencias reportadas / últimos 6 meses',
+    #                    'Num prácticas tradicionales y festivas del barrio','Num espacios para desarrollo cultural del barrio'],
+    #'Código':['V1','V2','V3','V4','V5','V6','V7','V8','V9','V10','V11','V12','V13','V14','V15','V16','V17','V18','V19']})
     print('\n Top 7 Barrios Recomendados \n')
     print(top7)
-    print(nomenclatura)
+    #print(nomenclatura)
     return indices_7
 
 def individuo(base_df,n_index):
@@ -391,8 +391,8 @@ def individuo(base_df,n_index):
 def test(base_df,k,gusto,n_index):
     nuevo_dato=pd.DataFrame(gusto.iloc[n_index]).T
     Vector_busqueda_guardado=filtrado(base_df,k,nuevo_dato)
-    vector_completo=np.concatenate((n_index,Vector_busqueda_guardado),axis=None)
-    guardarBusqueda(vector_completo)
+    #vector_completo=np.concatenate((n_index,Vector_busqueda_guardado),axis=None)
+    #guardarBusqueda(vector_completo)
     
 def Transformar(df_):
     df_T=df_.copy()
